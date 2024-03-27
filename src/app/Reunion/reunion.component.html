@@ -1,0 +1,27 @@
+
+
+
+    <div class="container">
+      <div class="card shadow mb-4">
+      <div class="card-body">
+        <table class="table">
+
+       
+            <tr class="table table-striped">
+            <tr> <th>Id</th><th>Nom</th> <th>Description</th> <th>Durée</th> <th>Date de Debut</th> <th>date de Fin</tr>
+            <tbody *ngFor="let reunion of reunions">
+            <tr >
+            <td>{{reunion.idReunion}}</td>
+            <td>{{reunion.nom}}</td>
+            <td>{{reunion.description}}</td>
+            <td>{{reunion.duree}}</td>
+            <td>{{reunion.dateDebut | date:'dd/MM/yyy'}}</td>
+            <td>{{reunion.dateFin}}</td>
+            <td><a class="btn btn-danger" (click)="supprimerReunion(reunion)">Supprimer</a></td>
+            <td><a class="btn btn-success" [routerLink]="['/updateFormation',reunion.idReunion]">Modifier</a></td>
+          </tr>
+            </tbody>
+        </table>
+
+     </div>
+</div>
